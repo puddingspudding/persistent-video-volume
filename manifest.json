@@ -1,0 +1,18 @@
+{
+    "name" : "Persistent Facebok Video Volume",
+    "version" : "0.1",
+    "manifest_version" : 2,
+    "description" : "Saves facebook video volume",
+    "permissions": ["storage", "http://*.facebook.com/", "https://*.facebook.com/"],
+    "content_scripts": [
+        {
+        "matches": ["https://*.facebook.com/*"],
+        "css": [],
+        "js": ["contentscript.js"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+
+}

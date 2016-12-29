@@ -10,7 +10,7 @@ window.setInterval(function() {
 
     chrome.storage.local.get("fb-volume", function(data) {
         var volume = data['fb-volume'];
-        for (var x = 1; x < videoTags.length; x++) {
+        for (var x = 0; x < videoTags.length; x++) {
             videoTags[x].volume = volume / 100;
         }
         prev = volume;

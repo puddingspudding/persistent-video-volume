@@ -1,4 +1,4 @@
-# Persistent Video Volume
+# [Persistent Video Volume](https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj)
 
 ![Logo](pvv.png)
 

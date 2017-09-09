@@ -1,12 +1,12 @@
 {
-    "name" : "Persistent Facebok Video Volume",
+    "name" : "Persistent Video Volume",
     "version" : "0.1",
     "manifest_version" : 2,
-    "description" : "Saves facebook video volume",
-    "permissions": ["storage", "http://*.facebook.com/", "https://*.facebook.com/"],
+    "description" : "Saves video volume for each website",
+    "permissions": ["storage", "<all_urls>"],
     "content_scripts": [
         {
-        "matches": ["https://*.facebook.com/*"],
+        "matches": ["<all_urls>"],
         "css": [],
         "js": ["contentscript.js"]
         }

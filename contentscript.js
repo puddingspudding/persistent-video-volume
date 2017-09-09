@@ -1,18 +1,20 @@
+var STORAGE_KEY = "video-volume";
 
-var prev = -1;
-
-window.setInterval(function() {
-
+function setVolume() {
     var videoTags = document.getElementsByTagName("video");
     if (videoTags.length == 0) {
         return;
     }
 
-    chrome.storage.local.get("fb-volume", function(data) {
-        var volume = data['fb-volume'];
-        for (var x = 0; x < videoTags.length; x++) {
-            videoTags[x].volume = volume / 100;
+    chrome.storage.local.get(STORAGE_KEY, function(data) {
+        if (!data || !(STORAGE_KEY in data)) {
+            return;
         }
-        prev = volume;
-    });
-}, 1000);
+        for (var x = 0; x < videoTags.length; x++) {
+            videoTags[x].volume = data[STORAGE_KEY] / 100;
+        }
+    });    
+}
+
+setVolume();
+window.setInterval(setVolume, 1000);

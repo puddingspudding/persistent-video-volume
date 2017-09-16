@@ -1,9 +1,9 @@
 {
     "name" : "Persistent Video Volume",
-    "version" : "0.1",
+    "version" : "0.2.0",
     "manifest_version" : 2,
     "description" : "Saves video volume for each website",
-    "permissions": ["storage", "<all_urls>"],
+    "permissions": ["storage", "tabs", "<all_urls>"],
     "icons": {
         "128": "icon128.png"
     },

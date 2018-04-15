@@ -1,5 +1,3 @@
-// init material design components
-window.mdc.autoInit();
 
 const STORAGE_KEY = "video-volume";
 const STATUS_KEY = "video-volume-status-per-website";
@@ -7,6 +5,7 @@ const STATUS_KEY = "video-volume-status-per-website";
 let store = chrome.storage || window.storage;
 let tbs = chrome.tabs || window.tabs;
 document.addEventListener('DOMContentLoaded', function() {
+
     const slider = new mdc.slider.MDCSlider(document.querySelector('.mdc-slider'));
 
     const status = document.getElementById('status');
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var text = document.getElementById("volume-value-label");
 
     var setLabel = function(volume) {
-        text.innerHTML = escape(volume) + '%';
+        text.textContent = volume + '%';
     }
 
     slider.listen('MDCSlider:change', () => {

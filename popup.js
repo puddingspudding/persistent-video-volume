@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const slider = new mdc.slider.MDCSlider(document.querySelector('.mdc-slider'));
 
     const status = document.getElementById('status');
+    const statusLabel = document.getElementById('status-label');
+
     mdc.checkbox.MDCCheckbox.attachTo(document.querySelector('.mdc-checkbox'));
 
     var text = document.getElementById("volume-value-label");
@@ -27,11 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
     status.addEventListener('change', () => {
         let enabled = status.checked;
         slider.disabled = !enabled;
+
         tbs.query({active: true}, function(tabs) {
             let host = parseHostFromURL(tabs[0].url);
             let key = {};
             key[STATUS_KEY + '_' + host] = enabled;
             store.local.set(key);
+            setStatusLabel(slider.disabled, host);
         });
     });
 
@@ -55,12 +59,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         slider.value = volume;
         setLabel(volume);
+
+        tbs.query({active: true}, function(tabs) {
+            let host = parseHostFromURL(tabs[0].url);
+            setStatusLabel(slider.disabled, host);
+        });
     });
 
     function parseHostFromURL(url) {
         var parser = document.createElement('a');
         parser.href = url;
         return parser.host;
+    }
+
+    function setStatusLabel(disabled, host) {
+        if (!disabled) {
+            statusLabel.textContent = "Enabled for " + host
+        } else {
+            statusLabel.textContent = "Disabled for " + host
+        }
     }
 
 });

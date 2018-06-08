@@ -1,6 +1,6 @@
 {
     "name" : "Persistent Video Volume",
-    "version" : "0.5.0",
+    "version" : "0.6.0",
     "manifest_version" : 2,
     "description" : "Sets video volume for all website to the same level",
     "permissions": ["storage", "tabs", "<all_urls>"],

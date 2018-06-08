@@ -10,10 +10,13 @@
             if (key in data && !data[key]) {
                 return;
             }
+
             var videoTags = document.getElementsByTagName("video");
-            if (videoTags.length == 0) {
+            var audioTags = document.getElementsByTagName("audio");
+            
+            if (videoTags.length == 0 && audioTags.length == 0) {
                 return;
-            }
+            }            
 
             store.local.get(STORAGE_KEY, function(data) {
                 if (!data || !(STORAGE_KEY in data)) {
@@ -21,6 +24,9 @@
                 }
                 for (var x = 0; x < videoTags.length; x++) {
                     videoTags[x].volume = data[STORAGE_KEY] / 100;
+                }
+                for (var x = 0; x < audioTags.length; x++) {
+                    audioTags[x].volume = data[STORAGE_KEY] / 100;
                 }
             });
         });

@@ -1,8 +1,8 @@
 {
-    "name" : "Persistent Video Volume",
+    "name" : "Persistent Video/Audio Volume",
     "version" : "0.6.0",
     "manifest_version" : 2,
-    "description" : "Sets video volume for all website to the same level",
+    "description" : "Saves video and audio volume",
     "permissions": ["storage", "tabs", "<all_urls>"],
     "icons": {
         "48": "icon48.png",

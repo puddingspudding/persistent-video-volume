@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let enabled = status.checked;
         slider.disabled = !enabled;
 
-        tbs.query({active: true}, function(tabs) {
+        tbs.query({active: true, currentWindow: true}, function(tabs) {
             let host = parseHostFromURL(tabs[0].url);
             let key = {};
             key[STATUS_KEY + '_' + host] = enabled;
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    tbs.query({active: true}, function(tabs) {
+    tbs.query({active: true, currentWindow: true}, function(tabs) {
         let host = parseHostFromURL(tabs[0].url);
         let key = STATUS_KEY + '_' + host;
         store.local.get(key, function(data) {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slider.value = volume;
         setLabel(volume);
 
-        tbs.query({active: true}, function(tabs) {
+        tbs.query({active: true, currentWindow: true}, function(tabs) {
             let host = parseHostFromURL(tabs[0].url);
             setStatusLabel(slider.disabled, host);
         });

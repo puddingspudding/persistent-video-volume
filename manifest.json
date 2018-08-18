@@ -1,6 +1,6 @@
 {
     "name" : "Persistent Video/Audio Volume",
-    "version" : "0.6.1",
+    "version" : "0.7.0",
     "manifest_version" : 2,
     "description" : "Saves video and audio volume",
     "permissions": ["storage", "tabs", "<all_urls>"],

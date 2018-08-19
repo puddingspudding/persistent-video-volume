@@ -3,6 +3,7 @@
     const STATUS_KEY = "video-volume-status-per-website";
 
     let store = chrome.storage || window.storage;
+
     lock = false;
     function setVolume() {
         let host = window.location.host;
@@ -35,6 +36,9 @@
                 }
 
                 for (var i in videoTags) {
+                    if (!videoTags[i]) {
+                        return;
+                    }
                     videoTags[i].onvolumechange = function (argument) {
                         lock = true;
                         var key = {};
@@ -42,6 +46,11 @@
                         store.local.set(key, function() {
                             lock = false;
                         });
+                    }
+                }
+                for (var i in audioTags) {
+                    if (!audioTags[i]) {
+                        return;
                     }
                     audioTags[i].onvolumechange = function (argument) {
                         lock = true;

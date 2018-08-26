@@ -9,17 +9,49 @@
                 padding: 0px;
                 margin: 0px;
             }
-            :root {
-                --mdc-layout-grid-margin-phone: 8px;
-                --mdc-layout-grid-gutter-phone: 8px;
-            }
         </style>
     </head>
     <body>
         <div class="mdc-layout-grid mdc-layout-grid--align-left">
             <div class="mdc-layout-grid__inner">
-
-                <div class="mdc-layout-grid__cell  mdc-layout-grid__cell--span-4-phone mdc-form-field">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--align-left mdc-layout-grid__cell--span-4-phone">
+                    <div id="max-global-slider"  class="mdc-slider mdc-slider--discrete mdc-slider--discrete" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Select Value">
+                        <div class="mdc-slider__track-container">
+                            <div class="mdc-slider__track"></div>
+                        </div>
+                        <div class="mdc-slider__thumb-container">
+                            <div class="mdc-slider__pin">
+                                <span class="mdc-slider__pin-value-marker"></span>
+                            </div>
+                            <svg class="mdc-slider__thumb" width="21" height="21">
+                                <circle cx="10.5" cy="10.5" r="7.875"></circle>
+                            </svg>
+                            <div class="mdc-slider__focus-ring"></div>
+                        </div>
+                        <span>Max Volume:</span>
+                        <label id="max-volume-value-label"></label>
+                    </div>
+                </div>
+                
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--align-left mdc-layout-grid__cell--span-3-phone">
+                    <div id="website-slider" class="mdc-slider mdc-slider--discrete mdc-slider--discrete" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Select Value">
+                        <div class="mdc-slider__track-container">
+                            <div class="mdc-slider__track"></div>
+                        </div>
+                        <div class="mdc-slider__thumb-container">
+                            <div class="mdc-slider__pin">
+                                <span class="mdc-slider__pin-value-marker"></span>
+                            </div>
+                            <svg class="mdc-slider__thumb" width="21" height="21">
+                                <circle cx="10.5" cy="10.5" r="7.875"></circle>
+                            </svg>
+                            <div class="mdc-slider__focus-ring"></div>
+                        </div>
+                        <span>Website Volume:</span>
+                        <label id="volume-value-label"></label>
+                    </div>
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--align-right mdc-layout-grid__cell--span-1-phone mdc-form-field">
                     <div class="mdc-checkbox">
                         <input id="status" type="checkbox" class="mdc-checkbox__native-control"/>
                         <div class="mdc-checkbox__background">
@@ -34,24 +66,7 @@
                     </div>
                     <label for="status" id="status-label"></label>
                 </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--align-left mdc-layout-grid__cell--span-4-phone">
-                    <div class="mdc-slider mdc-slider--discrete mdc-slider--discrete" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Select Value">
-                            <div class="mdc-slider__track-container">
-                                <div class="mdc-slider__track"></div>
-                            </div>
-                            <div class="mdc-slider__thumb-container">
-                                <div class="mdc-slider__pin">
-                                    <span class="mdc-slider__pin-value-marker"></span>
-                                </div>
-                                <svg class="mdc-slider__thumb" width="21" height="21">
-                                    <circle cx="10.5" cy="10.5" r="7.875"></circle>
-                                </svg>
-                                <div class="mdc-slider__focus-ring"></div>
-                            </div>
-                            <label id="volume-value-label"></label>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 

@@ -83,5 +83,5 @@
     }
 
     setVolume();
-    window.setInterval(setVolume, 100);
+    window.setInterval(setVolume, 500);
 })();

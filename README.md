@@ -18,11 +18,13 @@
 
 ## Dependencies
 
-### [Material Components Web](https://github.com/material-components/material-components-web)
+### [Material Components Web 0.41.0](https://github.com/material-components/material-components-web/archive/v0.41.1.zip)
 
 ```
-git submodule init && git submodule update
-cd material-components-web && npx webpack
+$ unzip v0.41.1.zip
+$ cd v0.41.1.zip
+$ npm install
+$ npx webpack
 ```
 
 ## Zip Extension
@@ -37,11 +39,11 @@ zip package.zip \
     LICENSE \
     icon*.png \
     contentscript.js \
-    material-components-web/build/material-components-web.css \
-    material-components-web/build/mdc.ripple.css \
-    material-components-web/build/mdc.autoinit.js \
-    material-components-web/build/material-components-web.js \
-    material-components-web/build/mdc.ripple.js
+    material-components-web-0.41.1/build/material-components-web.css \
+    material-components-web-0.41.1/build/mdc.ripple.css \
+    material-components-web-0.41.1/build/mdc.autoinit.js \
+    material-components-web-0.41.1/build/material-components-web.js \
+    material-components-web-0.41.1/build/mdc.ripple.js
 
 ```
 

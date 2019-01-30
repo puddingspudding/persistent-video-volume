@@ -12,9 +12,20 @@
         let websiteKey = STORAGE_KEY + '_' + host;
         store.local.get([key, MAX_VOL_STORAGE_KEY, websiteKey, STORAGE_KEY], function(data) {
 
-            var videoTags = document.getElementsByTagName("video");
-            var audioTags = document.getElementsByTagName("audio");
-            
+            var videoTags = Array.from(document.getElementsByTagName("video"));
+            var audioTags = Array.from(document.getElementsByTagName("audio"));
+
+            var iframes = document.getElementsByTagName('iframe')
+            if (iframes.length) {
+                for (var x = 0; x < iframes.length; x++) {
+                    var iframe = iframes[x];
+                    if (iframe.contentDocument) {
+                        videoTags = videoTags.concat(Array.from(iframe.contentDocument.getElementsByTagName('video')))
+                        audioTags = audioTags.concat(Array.from(iframe.contentDocument.getElementsByTagName('audio')))
+                    }
+                }
+            }
+
             if (videoTags.length == 0 && audioTags.length == 0) {
                 return;
             }

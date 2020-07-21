@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     tbs.query({active: true, currentWindow: true}, function(tabs) {
         
-        hostName = tabs[0].url.split("//")[1].split(".");
-
-        if (hostName.length == 3){
-            hostName = hostName[1]+hostName[2];
+        var hostName = tabs[0].split("//")[1];
+        
+        if (hostName.split(".").length <= 3){//removes sub-domain
+            hostName = hostName.substring(hostName.indexOf(".")+1, hostName.length);
         }
         host = parseHostFromURL(hostName);
         let key = STATUS_KEY + '_' + host;

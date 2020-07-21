@@ -30,7 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     tbs.query({active: true, currentWindow: true}, function(tabs) {
-        host = parseHostFromURL(tabs[0].url);
+        
+        hostName = tabs[0].url.split("//")[1].split(".");
+
+        if (hostName.length == 3){
+            hostName = hostName[1]+hostName[2];
+        }
+        host = parseHostFromURL(hostName);
         let key = STATUS_KEY + '_' + host;
         store.local.get(key, function(data) {
             if (key in data) {

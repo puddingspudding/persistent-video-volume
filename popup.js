@@ -5,6 +5,8 @@ const STATUS_KEY = "video-volume-status-per-website";
 
 let store = chrome.storage || window.storage;
 let tbs = chrome.tabs || window.tabs;
+let runtime = chrome.runtime || window.runtime;
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -29,7 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
         maxGlobalText.textContent = volume + '%';
     }
 
+    var currentTab;
+    
+
     tbs.query({active: true, currentWindow: true}, function(tabs) {
+        currentTab = tabs[0];
         host = parseHostFromURL(tabs[0].url);
         let key = STATUS_KEY + '_' + host;
         store.local.get(key, function(data) {
@@ -45,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         store.local.get(STORAGE_KEY + '_' + host, function(data) {
             var volume = data[STORAGE_KEY + '_' + host];
-            if (!volume) {
+            if (isNaN(volume)) {
                 volume = 50;
             }
             websiteSlider.value = volume;
@@ -76,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         store.local.set(key, function() {
             setWebsiteLabel(websiteSlider.value);
         });
+        tbs.sendMessage(currentTab.id, websiteSlider.value);
     });
 
     status.addEventListener('change', () => {

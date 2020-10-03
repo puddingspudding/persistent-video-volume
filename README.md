@@ -1,6 +1,13 @@
 # Persistent Video/Audio Volume
 
 [![Google Chrome Webstore](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj)[![Firefox Addons](https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png)](https://addons.mozilla.org/de/firefox/addon/persistent-video-audio-volume/?src=external-github)
+[![Google Chrome Webstore](https://github.com/puddingspudding/persistent-video-volume/raw/release-0.11.0/brave-logotype-full-color.png)](https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj)
+
+## Features
+
+- Saves volume settings for each website and applies saved volume on every visit
+- Or limit volume to a set maximum
+- Privacy - Does not track any activity
 
 ## Use cases
 

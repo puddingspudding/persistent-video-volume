@@ -1,7 +1,14 @@
 # Persistent Video/Audio Volume
 
-[![Google Chrome Webstore](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj)[![Firefox Addons](https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png)](https://addons.mozilla.org/de/firefox/addon/persistent-video-audio-volume/?src=external-github)
-[![Google Chrome Webstore](https://github.com/puddingspudding/persistent-video-volume/raw/release-0.11.0/brave-logotype-full-color.png)](https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj)
+<a href="https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj" target="_blank">
+    <img src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png" height="60px"/>
+</a>
+<a href="https://addons.mozilla.org/de/firefox/addon/persistent-video-audio-volume/?src=external-github" target="_blank">
+    <img src="https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png" height="60px"/>
+</a>
+<a href="https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj" target="_blank">
+    <img src="https://github.com/puddingspudding/persistent-video-volume/raw/release-0.11.0/brave-logotype-full-color.png" height="60px"/>
+</a>
 
 ## Features
 

@@ -21,6 +21,7 @@
 ### [Material Components Web 7.0.0](https://github.com/material-components/material-components-web/archive/v7.0.0.zip)
 
 ```
+# ./docker-build-dep.sh MATERIAL_COMPONENTS_WEB_VERSION 
 ./docker-build-dep.sh 7.0.0
 ```
 

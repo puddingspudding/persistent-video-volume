@@ -4,12 +4,21 @@
     const STATUS_KEY = "video-volume-status-per-website";
 
     let store = chrome.storage || window.storage;
+    let runtime = chrome.runtime || window.runtime;
+
+    runtime.onMessage.addListener(function(volume) {
+        let host = window.location.host;
+        data = {};
+        data[STORAGE_KEY + '_' + host] = Math.round(volume);
+        saveVolumne(data);
+    });
 
     lock = false;
     function setVolume() {
         let host = window.location.host;
         let key = STATUS_KEY + '_' + host;
         let websiteKey = STORAGE_KEY + '_' + host;
+
         store.local.get([key, MAX_VOL_STORAGE_KEY, websiteKey, STORAGE_KEY], function(data) {
 
             var videoTags = Array.from(document.getElementsByTagName("video"));
@@ -59,12 +68,13 @@
                     return;
                 }
                 videoTags[i].onvolumechange = function (argument) {
+                    if (argument.target.muted || argument.target.paused) {
+                        return;
+                    }
                     lock = true;
                     var key = {};
                     key[STORAGE_KEY + '_' + host] = Math.round(argument.target.volume * 100)
-                    store.local.set(key, function() {
-                        lock = false;
-                    });
+                    saveVolumne(key);
                 }
             }
             for (var i in audioTags) {
@@ -75,15 +85,22 @@
                     return;
                 }
                 audioTags[i].onvolumechange = function (argument) {
+                    if (argument.target.muted || argument.target.paused) {
+                        return;
+                    }
                     lock = true;
                     var key = {};
-                    key[STORAGE_KEY + '_' + host] = Math.round(argument.target.volume * 100)
-                    store.local.set(key, function() {
-                        lock = false;
-                    });
+                    key[STORAGE_KEY + '_' + host] = Math.round(argument.target.volume * 100);
+                    saveVolumne(key);
                 }
             }
 
+        });
+    }
+
+    function saveVolumne(data) {
+        store.local.set(data, function() {
+            lock = false;
         });
     }
 

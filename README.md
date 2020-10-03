@@ -18,33 +18,16 @@
 
 ## Dependencies
 
-### [Material Components Web 4.0.0](https://github.com/material-components/material-components-web/archive/v4.0.0.zip)
+### [Material Components Web 7.0.0](https://github.com/material-components/material-components-web/archive/v7.0.0.zip)
 
 ```
-$ wget "https://github.com/material-components/material-components-web/archive/v4.0.0.zip"
-$ unzip v4.0.0.zip
-$ cd material-components-web-4.0.0/
-$ npm install
-$ npm run build
+./docker-build-dep.sh 7.0.0
 ```
 
-## Zip Extension
+## Package Extension
 
 ```
-zip package.zip \
-    manifest.json \
-    pvv.png \
-    popup.js \
-    popup.html \
-    README.md \
-    LICENSE \
-    icon*.png \
-    contentscript.js \
-    material-components-web-4.0.0/build/material-components-web.css \
-    material-components-web-4.0.0/build/mdc.ripple.css \
-    material-components-web-4.0.0/build/mdc.autoInit.js \
-    material-components-web-4.0.0/build/material-components-web.js \
-    material-components-web-4.0.0/build/mdc.ripple.js
-
+# ./build.sh MATERIAL_COMPONENTS_WEB_VERSION PACKAGE_VERSION 
+./build.sh 7.0.0 0.11.0
 ```
 

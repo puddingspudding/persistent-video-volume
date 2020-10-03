@@ -5,16 +5,16 @@
 
 ## Features
 
-- Saves volume settings for each website and applies saved volume on every visit
-- Or limit volume to a set maximum
-- Privacy - Does not track any activity
+- :heavy_check_mark: Saves volume settings for each website and applies saved volume on every visit
+- :heavy_check_mark: Or limit volume to a set maximum
+- :heavy_check_mark: Privacy - Does not track any activity
 
 ## Use cases
 
-- Facebook.com
-- 9gag.com
-- Bandcamp.com
-- ... and many more
+- :heavy_check_mark: Facebook.com
+- :heavy_check_mark: 9gag.com
+- :heavy_check_mark: Bandcamp.com
+- :heavy_check_mark: ... and many more
 
 # Credits
 

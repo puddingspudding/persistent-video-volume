@@ -1,13 +1,27 @@
 # Persistent Video/Audio Volume
 
-[![Google Chrome Webstore](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj)[![Firefox Addons](https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png)](https://addons.mozilla.org/de/firefox/addon/persistent-video-audio-volume/?src=external-github)
+<a href="https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj" target="_blank">
+    <img src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png" height="60px"/>
+</a>
+<a href="https://addons.mozilla.org/de/firefox/addon/persistent-video-audio-volume/?src=external-github" target="_blank">
+    <img src="https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png" height="60px"/>
+</a>
+<a href="https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj" target="_blank">
+    <img src="https://github.com/puddingspudding/persistent-video-volume/raw/release-0.11.0/brave-logotype-full-color.png" height="60px"/>
+</a>
+
+## Features
+
+- :heavy_check_mark: Saves volume settings for each website and applies saved volume on every visit
+- :heavy_check_mark: Or limit volume to a set maximum
+- :heavy_check_mark: Privacy - Does not track any activity
 
 ## Use cases
 
-- Facebook.com
-- 9gag.com
-- Bandcamp.com
-- ... and many more
+- :heavy_check_mark: Facebook.com
+- :heavy_check_mark: 9gag.com
+- :heavy_check_mark: Bandcamp.com
+- :heavy_check_mark: ... and many more
 
 # Credits
 
@@ -18,33 +32,17 @@
 
 ## Dependencies
 
-### [Material Components Web 4.0.0](https://github.com/material-components/material-components-web/archive/v4.0.0.zip)
+### [Material Components Web 7.0.0](https://github.com/material-components/material-components-web/archive/v7.0.0.zip)
 
 ```
-$ wget "https://github.com/material-components/material-components-web/archive/v4.0.0.zip"
-$ unzip v4.0.0.zip
-$ cd material-components-web-4.0.0/
-$ npm install
-$ npm run build
+# ./docker-build-dep.sh MATERIAL_COMPONENTS_WEB_VERSION 
+./docker-build-dep.sh 7.0.0
 ```
 
-## Zip Extension
+## Package Extension
 
 ```
-zip package.zip \
-    manifest.json \
-    pvv.png \
-    popup.js \
-    popup.html \
-    README.md \
-    LICENSE \
-    icon*.png \
-    contentscript.js \
-    material-components-web-4.0.0/build/material-components-web.css \
-    material-components-web-4.0.0/build/mdc.ripple.css \
-    material-components-web-4.0.0/build/mdc.autoInit.js \
-    material-components-web-4.0.0/build/material-components-web.js \
-    material-components-web-4.0.0/build/mdc.ripple.js
-
+# ./build.sh MATERIAL_COMPONENTS_WEB_VERSION PACKAGE_VERSION 
+./build.sh 7.0.0 0.11.0
 ```
 

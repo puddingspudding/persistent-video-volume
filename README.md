@@ -1,7 +1,7 @@
 # Persistent Video/Audio Volume
 
 <a href="https://chrome.google.com/webstore/detail/persistent-video-volume/ppoliijncpdcgddmfibmgnjhegceaadj" target="_blank">
-    <img src="https://storage.googleapis.com/chrome-gcs-uploader.appspot.com/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/tbyBjqi7Zu733AAKA5n4.png" height="60px"/>
+    <img src="https://storage.googleapis.com/chrome-gcs-uploader.appspot.com/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/mPGKYBIR2uCP0ApchDXE.png" height="60px"/>
 </a>
 <a href="https://addons.mozilla.org/de/firefox/addon/persistent-video-audio-volume/?src=external-github" target="_blank">
     <img src="https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png" height="60px"/>

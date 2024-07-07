@@ -32,5 +32,11 @@
       "32": "icon32.png"
     }
   },
-  "content_security_policy": {}
+  "content_security_policy": {},
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{6f06a23b-cde8-478b-b1b9-f559bb3e9e84}",
+      "strict_min_version": "109.0"
+    }
+  }
 }
